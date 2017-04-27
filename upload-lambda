@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -eu
+
+# Install requirements
+cd /lambda/
+npm install --production
+
+# Create zip
+zip -9 /deploy/function.zip *
+
+# Upload to aws
+# aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
