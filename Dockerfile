@@ -1,6 +1,6 @@
 FROM amazonlinux
 
-RUN yum install -y zip gcc gcc-c++ make openssl-devel
+RUN yum install -y zip gcc gcc-c++ make openssl-devel git
 RUN cd /tmp/ | curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN pip install awscli
