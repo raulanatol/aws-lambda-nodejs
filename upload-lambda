@@ -5,7 +5,7 @@ set -eu
 cd /lambda/
 
 # Create zip
-zip -9R /deploy/function.zip *
+zip -9r /deploy/function.zip *
 
 # Upload to aws
 aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
