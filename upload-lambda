@@ -2,9 +2,7 @@
 
 set -eu
 
-# Install requirements
 cd /lambda/
-npm install --production
 
 # Create zip
 zip -9R /deploy/function.zip *
