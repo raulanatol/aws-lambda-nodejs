@@ -8,6 +8,6 @@ cd /lambda/
 zip -9r /deploy/function.zip *
 
 # Upload to aws
-if [ "false" == "$NO_UPDATE_FUNCTION" ] || [ ! "$NO_UPDATE_FUNCTION" ];then
-	aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME_YES_UPDATE_FUNCTION} --zip-file fileb:///deploy/function.zip
+if [ -z "${NO_UPDATE_FUNCTION}" ]; then
+	aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
 fi
