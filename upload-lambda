@@ -9,5 +9,5 @@ zip -9r /deploy/function.zip *
 
 # Upload to aws if terraform deploy is not enabled
 if [ "false" == "$TERRAFORM_DEPLOY" ] || [ ! "$TERRAFORM_DEPLOY" ];then
-	aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb:///deploy/function.zip
+	aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME_NO_TERRAFORM} --zip-file fileb:///deploy/function.zip
 fi
